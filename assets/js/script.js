@@ -60,7 +60,7 @@ function generatePassword() {
   // create empty arr and string
   var passwordArr = []
   var password = ""
-  
+
   // add one random character from each chosen set to ensure at least one is included in final password
   // add each character to a random position in the array
   for (var i = 0; i < passwordChars.length; i++){
@@ -69,19 +69,27 @@ function generatePassword() {
     // delete 0 elements
     // pick a random character from the current set (indicated by i) to insert
     passwordArr.splice(Math.floor(Math.random()*(passwordArr.length+1)), 0, passwordChars[i][Math.floor(Math.random()*passwordChars[i].length)]); 
-    console.log(passwordArr);
   }
 
 
   // create values to store randomly chosen first and second indices 
   var firstIndex = 0;
   var secondInex = 0;
-  // run code passwordLength times, first randomly choosing which set of characters to use then randomly choosing which character and then adding it to the final string
-  for (var i = 0; i < passwordLength; i++) {
+  // run code passwordLength - number of character sets times (as we've already added that many characters)
+  // first randomly choosing which set of characters to use then randomly choosing which character
+  // then add this value to a random position in the array
+  for (var i = 0; i < (passwordLength-passwordChars.length); i++) {
     firstIndex = Math.floor(Math.random()*passwordChars.length);
     secondIndex = Math.floor(Math.random()*passwordChars[firstIndex].length);
-    password = password + passwordChars[firstIndex][secondIndex];
+    //add the value from passwordChars[firstindex][secondindex] to a random place in the passwordArr 
+    passwordArr.splice(Math.floor(Math.random()*(passwordArr.length+1)), 0, passwordChars[firstIndex][secondIndex]);
   }
+
+  // convert random password array into a string
+  for (var i = 0; i < passwordArr.length; i++) {
+    password += passwordArr[i];
+  }
+
   // return randomly generated password string
   return password;
 
