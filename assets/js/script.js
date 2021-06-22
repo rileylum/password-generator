@@ -1,6 +1,11 @@
 // Assignment Code
 var generateBtn = document.querySelector('#generate');
 
+const special = ["!", "\"", "\#"];
+const number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const lower = ["a", "b", "c"];
+const upper = ["A", "B", "C"];
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -30,6 +35,23 @@ function generatePassword() {
     useLower = window.confirm("Do you want to user lowercase characters?");
     useUpper = window.confirm("Do you want to use uppercase characters?");
   }
+
+  // create empty array, and then concat character arrays if their respected boolean is true
+  var passwordChars = []
+  if (useSpecial) {
+    passwordChars = passwordChars.concat(special); //add special characters
+  } 
+  if (useNumber) {
+    passwordChars = passwordChars.concat(number); //add numbers
+  } 
+  if (useLower) {
+    passwordChars = passwordChars.concat(lower); //add lowercase characters
+  }
+  if (useUpper) {
+    passwordChars = passwordChars.concat(upper); //add uppercase characters
+  }
+
+
 }
 
 // Add event listener to generate button
