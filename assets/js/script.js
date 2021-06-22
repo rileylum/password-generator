@@ -51,6 +51,14 @@ function generatePassword() {
     passwordChars = passwordChars.concat(upper); //add uppercase characters
   }
 
+  // create empty string
+  var password = ""
+  // run code passwordLength times, each time adding a random character from passwordChars to password string
+  for (var i = 0; i < passwordLength; i++) {
+    password = password + passwordChars[Math.floor(Math.random()*passwordChars.length)]
+  }
+  // return randomly generated password string
+  return password;
 
 }
 
