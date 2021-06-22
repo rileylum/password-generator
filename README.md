@@ -2,7 +2,9 @@
 
 ## Description
 
---Add description text 
+In this homework project I have been tasked to create a function which returns a randomly generated password based on some user input. 
+The user input relys on window.alert, window.prompt and window.confirm.
+I have used conditional statements, array methods and the math object to create a random password of a certain length and from a set of characters which the user has chosen. 
 
 It must meet the following Acceptance Criteria given the User Story:
 
@@ -34,12 +36,31 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
 
---Add screenshot of website
+Here is a screenshot of the finished website:
+
+![The password generator website contains some header text, a text-box to show the generated password, and a button which allows you to generate a password via some prompts.](./assets/img/WebsiteScreengrab.png)
 
 ## Usage
 
---Add link and instruction on app usage
+The website can be viewed here: https://rileylum.github.io/password-generator/ </br>
+
+Click the 'Generate Password' button and follow the prompts and a random password will be generated.
 
 ## Credits
 
---Add any credits or resources
+I found a number of resoures useful in this project: </br>
+
+For user input: </br>
+https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
+https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt
+https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm
+
+For conditional logic: </br>
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...
+
+For random numbers: </br>
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+For array methods: </br>
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
