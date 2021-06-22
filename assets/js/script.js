@@ -36,26 +36,37 @@ function generatePassword() {
     useUpper = window.confirm("Do you want to use uppercase characters?");
   }
 
-  // create empty array, and then concat character arrays if their respected boolean is true
+  // create empty array, and then concat character arrays to their own index if their respected boolean is true
   var passwordChars = []
+  var numDiffChars = 0;
+
   if (useSpecial) {
-    passwordChars = passwordChars.concat(special); //add special characters
+    passwordChars[numDiffChars] = special; //add special characters to next index
+    numDiffChars++;
   } 
   if (useNumber) {
-    passwordChars = passwordChars.concat(number); //add numbers
+    passwordChars[numDiffChars] = number; //add numbers to next index
+    numDiffChars++;
   } 
   if (useLower) {
-    passwordChars = passwordChars.concat(lower); //add lowercase characters
+    passwordChars[numDiffChars] = lower; //add lowercase characters next index
+    numDiffChars++;
   }
   if (useUpper) {
-    passwordChars = passwordChars.concat(upper); //add uppercase characters
+    passwordChars[numDiffChars] = upper; //add uppercase characters next index
+    numDiffChars++;
   }
 
   // create empty string
   var password = ""
-  // run code passwordLength times, each time adding a random character from passwordChars to password string
+  // create values to store randomly chosen first and second indices 
+  var firstIndex = 0;
+  var secondInex = 0;
+  // run code passwordLength times, first randomly choosing which set of characters to use then randomly choosing which character and then adding it to the final string
   for (var i = 0; i < passwordLength; i++) {
-    password = password + passwordChars[Math.floor(Math.random()*passwordChars.length)]
+    firstIndex = Math.floor(Math.random()*passwordChars.length);
+    secondIndex = Math.floor(Math.random()*passwordChars[firstIndex].length);
+    password = password + passwordChars[firstIndex][secondIndex];
   }
   // return randomly generated password string
   return password;
