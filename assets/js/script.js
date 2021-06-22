@@ -57,8 +57,22 @@ function generatePassword() {
     numDiffChars++;
   }
 
-  // create empty string
+  // create empty arr and string
+  var passwordArr = []
   var password = ""
+  
+  // add one random character from each chosen set to ensure at least one is included in final password
+  // add each character to a random position in the array
+  for (var i = 0; i < passwordChars.length; i++){
+    // splice(index to insert at, number of elements to delete, what to insert)
+    // pick random number between 0 and current length of passwordArr to pick a random index to insert at
+    // delete 0 elements
+    // pick a random character from the current set (indicated by i) to insert
+    passwordArr.splice(Math.floor(Math.random()*(passwordArr.length+1)), 0, passwordChars[i][Math.floor(Math.random()*passwordChars[i].length)]); 
+    console.log(passwordArr);
+  }
+
+
   // create values to store randomly chosen first and second indices 
   var firstIndex = 0;
   var secondInex = 0;
