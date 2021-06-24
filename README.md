@@ -3,38 +3,16 @@
 ## Description
 
 In this homework project I have been tasked to create a function which returns a randomly generated password based on some user input. 
-The user input relys on window.alert, window.prompt and window.confirm.
-I have used conditional statements, array methods and the math object to create a random password of a certain length and from a set of characters which the user has chosen. 
 
-It must meet the following Acceptance Criteria given the User Story:
+The website generates a password of a length between 8 and 128 characters (decided by the user), and uses at least one type of character from "special" characters (symbols like %, !, $ for example, a full list was used from: https://www.owasp.org/index.php/Password_special_characters), numbers (0-9), lower case and upper case characters (a,b,..z and A,B,...Z). I have also included some logic so that when the user picks a set of characters it is guaranteed to be included in the password.
 
-## User Story
+I used and learnt about a range of interesting javascript including: 
+  - The alert, prompt and confirm methods to gain user input
+  - Conditional statements, and loops (for, do..while and while)
+  - Arrays and Array methods
+  - and the Math object, specifically Math.random
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
-
-## Acceptance Criteria
-
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+It also gave me an opportunity to think about logic and how to use javascript to achieve this.
 
 Here is a screenshot of the finished website:
 
